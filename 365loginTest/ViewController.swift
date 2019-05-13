@@ -8,65 +8,52 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate{
 
     let service = OutlookService.shared()
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var userEmailLabel: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
+    var dataSource: MessagesDataSource?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //El usuario esta logeado o no.
-        
+
+        //Al parecer no ayuda, el borrado de cookies
         let storage = HTTPCookieStorage.shared
         storage.cookies?.forEach() { storage.deleteCookie($0) }
 
         print(service.isLoggedIn)
-      //  removeCookies()
-       //service.forgetUser()
         
         setLogInState(loggedIn: service.isLoggedIn)
         if (service.isLoggedIn) {
             loadUserData()
         }
-        //service.logout()
-       // service.forgetUser()
-//        let storage = HTTPCookieStorage.shared
-//        storage.cookies?.forEach() { storage.deleteCookie($0) }
+        
+        tableView.delegate = self
+      // tableView.estimatedRowHeight = 300;
+       // tableView.rowHeight = UITableView.automaticDimension
+     
     }
     override func viewDidAppear(_ animated: Bool) {
         userEmailLabel.text = ""
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     @IBAction func logInButtonAction(_ sender: UIButton) {
-//        if (service.isLoggedIn) {
-//            // Logout
-//            service.logout()
-//           // service.forgetUser()
-//            setLogInState(loggedIn: false)
-//        } else {
-//            // Login
-//            let storage = HTTPCookieStorage.shared
-//            storage.cookies?.forEach() { storage.deleteCookie($0) }
-//
-//
-//            service.login(from: self) {
-//                error in
-//                if let unwrappedError = error {
-//                    NSLog("Error logging in: \(unwrappedError)")
-//                } else {
-//                    NSLog("Successfully logged in.")
-//                    self.setLogInState(loggedIn: true)
-//                }
-//            }
-//        }
         
         if (service.isLoggedIn) {
             // Logout
             service.logout()
             userEmailLabel.text = ""
             setLogInState(loggedIn: false)
+        
+            tableView.reloadData()
         } else {
             // Login
             service.login(from: self) {
@@ -120,14 +107,13 @@ class ViewController: UIViewController {
             email in
             if let unwrappedEmail = email {
                 NSLog("Hello \(unwrappedEmail)")
-                self.userEmailLabel.text = unwrappedEmail
                 
                 self.service.getInboxMessages() {
                     messages in
                     if let unwrappedMessages = messages {
-                        for (message) in unwrappedMessages["value"].arrayValue {
-                            NSLog(message["subject"].stringValue)
-                        }
+                        self.dataSource = MessagesDataSource(messages: unwrappedMessages["value"].arrayValue)
+                        self.tableView.dataSource = self.dataSource
+                        self.tableView.reloadData()
                     }
                 }
             }

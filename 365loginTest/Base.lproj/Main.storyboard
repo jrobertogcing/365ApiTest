@@ -18,15 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78R-if-VJP">
-                                <rect key="frame" x="104" y="53" width="166" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="LogIn"/>
-                                <connections>
-                                    <action selector="logInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brj-w1-uLH"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90g-bm-yC5">
                                 <rect key="frame" x="16" y="126" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -34,12 +25,78 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w6J-YY-U94">
+                                <rect key="frame" x="0.0" y="71" width="375" height="596"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="106" id="IVp-VT-Hfw" customClass="MessageCell" customModule="_65loginTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IVp-VT-Hfw" id="Qgi-fG-HDg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0M-XC-dO4">
+                                                    <rect key="frame" x="15" y="10" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf4-cf-whZ">
+                                                    <rect key="frame" x="15" y="39" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuI-Mt-vXt">
+                                                    <rect key="frame" x="15" y="68" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fromLabel" destination="G0M-XC-dO4" id="0uZ-g9-wUi"/>
+                                            <outlet property="receivedLabel" destination="hf4-cf-whZ" id="8C8-Cd-SXt"/>
+                                            <outlet property="subjectLabel" destination="IuI-Mt-vXt" id="i3a-8l-C7V"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MEN-Nd-0zC"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78R-if-VJP">
+                                <rect key="frame" x="229" y="20" width="130" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Cm6-Pw-Ecn"/>
+                                    <constraint firstAttribute="height" constant="41" id="jkW-ol-jdY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="LogIn"/>
+                                <connections>
+                                    <action selector="logInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brj-w1-uLH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="78R-if-VJP" secondAttribute="trailing" constant="16" id="0Hh-KQ-Ejn"/>
+                            <constraint firstItem="w6J-YY-U94" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Kx-Mx-zz2"/>
+                            <constraint firstItem="w6J-YY-U94" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DBw-QR-aaj"/>
+                            <constraint firstItem="w6J-YY-U94" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DH6-ui-7HV"/>
+                            <constraint firstItem="w6J-YY-U94" firstAttribute="top" secondItem="78R-if-VJP" secondAttribute="bottom" constant="10" id="KwS-by-1qP"/>
+                            <constraint firstItem="78R-if-VJP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="N6m-Nk-NfX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="78R-if-VJP" id="ChX-pv-5Ba"/>
+                        <outlet property="tableView" destination="w6J-YY-U94" id="tyL-wK-oR3"/>
                         <outlet property="userEmailLabel" destination="90g-bm-yC5" id="1gq-iq-4Ge"/>
                     </connections>
                 </viewController>

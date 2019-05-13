@@ -67,11 +67,14 @@ class OutlookService {
     }
     
     func logout() -> Void {
+       // Borrado de cookies, no ayuda
         let storage = HTTPCookieStorage.shared
         storage.cookies?.forEach() { storage.deleteCookie($0) }
         oauth2.forgetTokens()
 
     }
+    
+    //Funcion de prueba, no funcionó
     func forgetUser() -> Void {
         //oauth2.abortAuthorization()
         oauth2.forgetTokens()

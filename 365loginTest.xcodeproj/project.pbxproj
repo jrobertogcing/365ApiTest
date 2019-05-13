@@ -14,6 +14,8 @@
 		88EC8A7B22873D9B006EF515 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88EC8A7A22873D9B006EF515 /* Assets.xcassets */; };
 		88EC8A7E22873D9B006EF515 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EC8A7C22873D9B006EF515 /* LaunchScreen.storyboard */; };
 		88EC8A8622874555006EF515 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EC8A8522874555006EF515 /* OutlookService.swift */; };
+		88EC8A902289D69E006EF515 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EC8A8F2289D69E006EF515 /* MessageCell.swift */; };
+		88EC8A922289D6CC006EF515 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EC8A912289D6CC006EF515 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		88EC8A7D22873D9B006EF515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88EC8A7F22873D9B006EF515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88EC8A8522874555006EF515 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
+		88EC8A8F2289D69E006EF515 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		88EC8A912289D6CC006EF515 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		E34D6C789F95D10F17229737 /* Pods-365loginTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-365loginTest.debug.xcconfig"; path = "Target Support Files/Pods-365loginTest/Pods-365loginTest.debug.xcconfig"; sourceTree = "<group>"; };
 		FDD6E2A5F9836CBF6627F5FC /* Pods_365loginTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_365loginTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +79,8 @@
 				88EC8A7322873D9A006EF515 /* AppDelegate.swift */,
 				88EC8A7522873D9A006EF515 /* ViewController.swift */,
 				88EC8A7722873D9A006EF515 /* Main.storyboard */,
+				88EC8A912289D6CC006EF515 /* Formatter.swift */,
+				88EC8A8F2289D69E006EF515 /* MessageCell.swift */,
 				88EC8A7A22873D9B006EF515 /* Assets.xcassets */,
 				88EC8A7C22873D9B006EF515 /* LaunchScreen.storyboard */,
 				88EC8A7F22873D9B006EF515 /* Info.plist */,
@@ -207,6 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88EC8A7622873D9A006EF515 /* ViewController.swift in Sources */,
+				88EC8A902289D69E006EF515 /* MessageCell.swift in Sources */,
+				88EC8A922289D6CC006EF515 /* Formatter.swift in Sources */,
 				88EC8A7422873D9A006EF515 /* AppDelegate.swift in Sources */,
 				88EC8A8622874555006EF515 /* OutlookService.swift in Sources */,
 			);
